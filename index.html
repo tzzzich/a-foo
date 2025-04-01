@@ -71,10 +71,10 @@
     const webApp = Telegram.WebApp;
     const user = webApp.initDataUnsafe.user;
     
-    if (user && user.username) {
+    if (user && (user.first_name || user.username || user.last_name)) {
       document.getElementById('username').innerText = user.first_name || user.username || user.last_name;
     } else {
-      document.getElementById('username').innerText = 'Неизвестный пользователь';
+      document.getElementById('username').innerText = 'Почему-то имя не считалось.. Ноунейм';
     }
     
   </script>
