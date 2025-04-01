@@ -72,7 +72,7 @@
     const user = webApp.initDataUnsafe.user;
     
     if (user && user.username) {
-      document.getElementById('username').innerText = user.first_name;
+      document.getElementById('username').innerText = user.first_name || user.username || user.last_name;
     } else {
       document.getElementById('username').innerText = 'Неизвестный пользователь';
     }
